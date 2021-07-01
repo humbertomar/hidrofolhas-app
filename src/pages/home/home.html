@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button menuToggle clear>
+        <img class="navbarIcon2" src="assets/imgs/menu.png" />
+      </button>
+    </ion-buttons>
+    <ion-title>
+      <div class="absoluteCenter">
+        <img src='assets/imgs/logo-hidrofolhas-topo.png'>
+      </div>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="navcart()">
+        <img class="navbarIcon" src="assets/imgs/bag.png" />
+        <ion-badge class="carts" item-right color="danger">{{noOfItems}}</ion-badge>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!--<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons left>
+      <button color="light" ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title class="title">
+      SH Delivery
+    </ion-title>
+    <ion-buttons end>
+      <button color="light" ion-button icon-only color="royal" (click)="navcart()" class="header-btn-cart">
+        <ion-icon name="cart"></ion-icon>
+        <ion-badge class="carts" item-right color="danger">{{noOfItems}}</ion-badge>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>-->
+
+<ion-content>
+
+  <ion-grid class="grid">
+    <ion-row>
+      <ion-slides pager initialSlide=0 speed=2000 loop=true dir="rtl">
+        <ion-slide>
+          <img src='assets/imgs/destaque00-800x400.jpg' class="slider-img">
+        </ion-slide>
+        <!--<ion-slide *ngFor="let item of dataSetSlider">
+          <img src={{item.thumb}} class="slider-img">
+        </ion-slide>-->
+      </ion-slides>
+    </ion-row>
+
+    <ion-row>
+
+      <ion-col col-1>
+
+      </ion-col>
+
+      <ion-col col-10>
+
+        <ion-grid>
+          <ion-row>
+      
+              <ion-col col-6 *ngFor="let item of dataSetCategory" (click)="navigate(item.id)">
+
+                  <div style="text-align: center; padding: 10px; background-color: #2C8F12; border-radius: 15px; margin-bottom: 5px; height:76px;">
+                    <p style="font-size: 16px;" ion-text color="light">{{item.name | uppercase}}</p>
+                  </div>
+      
+              </ion-col> 
+      
+          </ion-row>
+      </ion-grid>
+
+      </ion-col>
+
+      <ion-col col-1>
+
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <!--<ion-toolbar>
+    <p style="font-size: 12px; text-align: center;" ion-text color="light">
+      Hidrofolhas Comércio de Verduras e Legumes LTDA</p>
+  </ion-toolbar>-->
+</ion-footer>

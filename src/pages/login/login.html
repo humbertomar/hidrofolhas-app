@@ -1,0 +1,40 @@
+<ion-content padding [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}">
+
+    <form [formGroup]="valForm" (submit)="OnLogin($event, valForm.value)">
+
+        <ion-row>
+            <ion-col>
+                <ion-list inset class="no-border">
+
+                    <img class="logo" src="assets/img/logo-2.png" />
+
+                    <ion-item>
+                        <ion-input class="form-control" id="exampleInputEmail1" type="email" name="email"
+                            placeholder="Digite seu e-mail" autocomplete="off" formControlName="email" required>
+                        </ion-input>
+                    </ion-item>
+
+                    <br>
+
+                    <ion-item>
+                        <ion-input id="exampleInputPassword1" type="password" name="password"
+                            placeholder="Digite sua senha" formControlName="password" required></ion-input>
+                    </ion-item>
+
+                    <a style="font-size: 16px; text-align: right; margin-top: 10px; margin-bottom: 10px;" ion-text color="light" (click)="onClickForgotPassword()">Esqueceu a senha?</a>
+
+                    <button class="login-btn" type="submit" [disabled]="!valForm.valid" ion-button>Acessar</button>
+
+                </ion-list>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col>
+                <a style="font-size: 14px; text-align: center;" ion-text color="light" (click)="Register()">Não tem conta? Clique aqui para criar!</a>
+            </ion-col>
+        </ion-row>
+
+    </form>
+
+</ion-content>
